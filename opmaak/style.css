@@ -1,0 +1,68 @@
+body {
+  background-color: green;
+}
+  .vlakm{
+    height:12em;
+    border: 2px solid #fff;
+  }
+
+  .vlak{
+    position: relative;
+    height:1em;
+    border: 2px solid #fff;
+  }
+
+label{
+  font-family: sans-serif, Arial;
+  background-color: #f1f1f1;
+  display:block;
+  padding:2em;
+  margin-bottom: 1em;
+  display:grid;
+  grid-template-columns: 1fr auto;
+}
+/*Schakel de default elementen uit*/
+@supports( (-webkit-appearance:none) or (-moz-appearance:none) or (-ms-appearance:none) or (-o-appearance:none) ) {
+    .switch{
+      -ms-appearance:none;
+        -moz-appearance:none;
+      -o-appearance:none;
+        -webkit-appearance:none;
+
+      width:3.5em;
+      height: 1.6em;
+      border-radius: 2em;
+      background-color: red;
+      /*verwijder outline om de checkbox heen*/
+      outline:none;
+      transition: background-color .2s linear;
+    }
+
+      .switch::after{
+        content:"";
+        background-color: #fff;
+        display:block;
+        position: relative;
+        top:.15em;
+        left:.15em;
+        width: 1.15em;
+        height: 1.15em;
+        border: .1em solid #fff;
+        border-radius: 45%;
+        transition: left .2s ease-in-out;
+      }
+
+    /*wanneer checked verander achtergrond*/
+      .switch:checked{
+        background-color:green;
+        left:2em;
+      }
+
+    /*wanneer checked dan verplaats je naar rechts met 16px*/
+      .switch:checked::after{
+        left:2em;
+      }
+
+
+
+    }
